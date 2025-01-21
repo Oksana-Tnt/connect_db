@@ -1,26 +1,22 @@
 <?php
 require_once "./connection.php";
 
-class User
+class User extends Connection
 {
     public $name;
     public $surName;
-
+    private $db;
     public function __construct($name, $surName)
     {
         $this->name = $name;
         $this->surName = $surName;
+        $this->db = new Connection();
     }
 
-    private function connectToDb(): PDO|string
-    {
-        $db = new Connection("localhost", "test_conessione", "Oksana", "8Ph26qZ5");
-        return $db->createConnection();
-    }
     public function addToDb()
     {
         $sql = "INSERT INTO utenti(nome, cognome) VALUES (:nome, :cognome)";
-        $query = $this->connectToDb()->prepare($sql);
+        $query = $this->db->connection->prepare($sql);
         $query->bindParam(':nome', $this->name, PDO::PARAM_STR);
         $query->bindParam(':cognome', $this->surName, PDO::PARAM_STR);
 
