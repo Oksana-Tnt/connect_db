@@ -1,5 +1,5 @@
 <?php
-require_once "./user.php";
+require_once "./userClass.php";
 ?>
 
 <!DOCTYPE html>
@@ -51,8 +51,9 @@ require_once "./user.php";
         }
         ?>
 
-    </div>
 
+        <a href="products.php">Show all products</a>
+    </div>
 </body>
 
 </html>

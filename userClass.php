@@ -10,7 +10,7 @@ class User extends Connection
     {
         $this->name = $name;
         $this->surName = $surName;
-        $this->db = new Connection();
+        $this->db = new Connection("localhost", "test_conessione", "Oksana", "8Ph26qZ5");
     }
 
     public function addToDb()
