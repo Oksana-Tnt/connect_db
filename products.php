@@ -51,7 +51,7 @@ $columns = $product->createColumns($allProducts);
                 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
 
                     <input type="text" value="<?= $name ?>" name="name" placeholder="Cerca utenti per nome" class="form-control">
-                    <button class="btn btn-primary" type="submit">Cerca</button>
+                    <button class="btn btn-primary">Cerca</button>
 
                 </form>
 
